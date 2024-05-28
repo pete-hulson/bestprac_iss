@@ -1,4 +1,4 @@
-# script to test length bin structure
+# to test plus age
 
 # load packages ----
 # devtools::unload('surveyISS')
@@ -37,7 +37,7 @@ if(iters < 100){
   st <- Sys.time()
 }
 
-# 1 cm bins ----
+# 5+ ----
 ## age & length ----
 surveyISS::srvy_iss(iters = iters, 
                     lfreq_data = data$lfreq,
@@ -45,31 +45,31 @@ surveyISS::srvy_iss(iters = iters,
                     cpue_data = data$cpue, 
                     strata_data = data$strata,  
                     yrs = 1990,
-                    bin = 1,
                     boot_hauls = TRUE, 
                     boot_lengths = TRUE, 
                     boot_ages = TRUE, 
                     al_var = TRUE, 
                     al_var_ann = TRUE, 
                     age_err = TRUE,
+                    plus_age = 5,
                     region = 'goa',  
-                    save = '1cm')
+                    save = '5plus')
 
 ## caal ----
 surveyISS::srvy_iss_caal(iters = iters, 
                          specimen_data = data$specimen, 
                          cpue_data = data$cpue, 
                          yrs = 1990,
-                         bin = 1,
                          boot_hauls = TRUE, 
                          boot_ages = TRUE,
                          al_var = TRUE, 
                          al_var_ann = TRUE, 
                          age_err = TRUE,
+                         plus_age = 5,
                          region = 'goa',  
-                         save = '1cm')
+                         save = '5plus')
 
-# 2 cm bins ----
+# 10+ ----
 ## age & length ----
 surveyISS::srvy_iss(iters = iters, 
                     lfreq_data = data$lfreq,
@@ -77,31 +77,31 @@ surveyISS::srvy_iss(iters = iters,
                     cpue_data = data$cpue, 
                     strata_data = data$strata,  
                     yrs = 1990,
-                    bin = 1,
                     boot_hauls = TRUE, 
                     boot_lengths = TRUE, 
                     boot_ages = TRUE, 
                     al_var = TRUE, 
                     al_var_ann = TRUE, 
                     age_err = TRUE,
+                    plus_age = 10,
                     region = 'goa',  
-                    save = '2cm')
+                    save = '10plus')
 
 ## caal ----
 surveyISS::srvy_iss_caal(iters = iters, 
                          specimen_data = data$specimen, 
                          cpue_data = data$cpue, 
                          yrs = 1990,
-                         bin = 1,
                          boot_hauls = TRUE, 
                          boot_ages = TRUE,
                          al_var = TRUE, 
                          al_var_ann = TRUE, 
                          age_err = TRUE,
+                         plus_age = 10,
                          region = 'goa',  
-                         save = '2cm')
+                         save = '10plus')
 
-# 3 cm bins ----
+# 15+ ----
 ## age & length ----
 surveyISS::srvy_iss(iters = iters, 
                     lfreq_data = data$lfreq,
@@ -109,31 +109,31 @@ surveyISS::srvy_iss(iters = iters,
                     cpue_data = data$cpue, 
                     strata_data = data$strata,  
                     yrs = 1990,
-                    bin = 1,
                     boot_hauls = TRUE, 
                     boot_lengths = TRUE, 
                     boot_ages = TRUE, 
                     al_var = TRUE, 
                     al_var_ann = TRUE, 
                     age_err = TRUE,
+                    plus_age = 15,
                     region = 'goa',  
-                    save = '3cm')
+                    save = '15plus')
 
 ## caal ----
 surveyISS::srvy_iss_caal(iters = iters, 
                          specimen_data = data$specimen, 
                          cpue_data = data$cpue, 
                          yrs = 1990,
-                         bin = 1,
                          boot_hauls = TRUE, 
                          boot_ages = TRUE,
                          al_var = TRUE, 
                          al_var_ann = TRUE, 
                          age_err = TRUE,
+                         plus_age = 15,
                          region = 'goa',  
-                         save = '3cm')
+                         save = '15plus')
 
-# 5 cm bins ----
+# 20+ ----
 ## age & length ----
 surveyISS::srvy_iss(iters = iters, 
                     lfreq_data = data$lfreq,
@@ -141,31 +141,31 @@ surveyISS::srvy_iss(iters = iters,
                     cpue_data = data$cpue, 
                     strata_data = data$strata,  
                     yrs = 1990,
-                    bin = 1,
                     boot_hauls = TRUE, 
                     boot_lengths = TRUE, 
                     boot_ages = TRUE, 
                     al_var = TRUE, 
                     al_var_ann = TRUE, 
                     age_err = TRUE,
+                    plus_age = 20,
                     region = 'goa',  
-                    save = '5cm')
+                    save = '20plus')
 
 ## caal ----
 surveyISS::srvy_iss_caal(iters = iters, 
                          specimen_data = data$specimen, 
                          cpue_data = data$cpue, 
                          yrs = 1990,
-                         bin = 1,
                          boot_hauls = TRUE, 
                          boot_ages = TRUE,
                          al_var = TRUE, 
                          al_var_ann = TRUE, 
                          age_err = TRUE,
+                         plus_age = 20,
                          region = 'goa',  
-                         save = '5cm')
+                         save = '20plus')
 
-# 10 cm bins ----
+# 25+ ----
 ## age & length ----
 surveyISS::srvy_iss(iters = iters, 
                     lfreq_data = data$lfreq,
@@ -173,29 +173,62 @@ surveyISS::srvy_iss(iters = iters,
                     cpue_data = data$cpue, 
                     strata_data = data$strata,  
                     yrs = 1990,
-                    bin = 1,
                     boot_hauls = TRUE, 
                     boot_lengths = TRUE, 
                     boot_ages = TRUE, 
                     al_var = TRUE, 
                     al_var_ann = TRUE, 
                     age_err = TRUE,
+                    plus_age = 25,
                     region = 'goa',  
-                    save = '10cm')
+                    save = '25plus')
 
 ## caal ----
 surveyISS::srvy_iss_caal(iters = iters, 
                          specimen_data = data$specimen, 
                          cpue_data = data$cpue, 
                          yrs = 1990,
-                         bin = 1,
                          boot_hauls = TRUE, 
                          boot_ages = TRUE,
                          al_var = TRUE, 
                          al_var_ann = TRUE, 
                          age_err = TRUE,
+                         plus_age = 25,
                          region = 'goa',  
-                         save = '10cm')
+                         save = '25plus')
+
+# 30+ ----
+## age & length ----
+surveyISS::srvy_iss(iters = iters, 
+                    lfreq_data = data$lfreq,
+                    specimen_data = data$specimen, 
+                    cpue_data = data$cpue, 
+                    strata_data = data$strata,  
+                    yrs = 1990,
+                    boot_hauls = TRUE, 
+                    boot_lengths = TRUE, 
+                    boot_ages = TRUE, 
+                    al_var = TRUE, 
+                    al_var_ann = TRUE, 
+                    age_err = TRUE,
+                    plus_age = 30,
+                    region = 'goa',  
+                    save = '30plus')
+
+## caal ----
+surveyISS::srvy_iss_caal(iters = iters, 
+                         specimen_data = data$specimen, 
+                         cpue_data = data$cpue, 
+                         yrs = 1990,
+                         boot_hauls = TRUE, 
+                         boot_ages = TRUE,
+                         al_var = TRUE, 
+                         al_var_ann = TRUE, 
+                         age_err = TRUE,
+                         plus_age = 5,
+                         region = 'goa',  
+                         save = '30plus')
+
 
 
 # For testing run time of 500 iterations ----
