@@ -14,7 +14,7 @@ iters = 10
 # get data ----
 # if query = TRUE then will run data queries, if FALSE will read previously run data
 # set = TRUE if first time running, or if data has changed
-query = TRUE
+query = FALSE
 
 region = 'goa'
 yrs = 1990
@@ -38,39 +38,69 @@ if(iters < 100){
 }
 
 # no-spatial ----
-# note that 1 cm results will provide this
+# note that these are for 1 cm 
+## age & length ----
+surveyISS::srvy_iss(iters = iters, 
+                    lfreq_data = data$lfreq,
+                    specimen_data = data$specimen, 
+                    cpue_data = data$cpue, 
+                    strata_data = data$strata,  
+                    yrs = 1990,
+                    bin = 1,
+                    boot_hauls = TRUE, 
+                    boot_lengths = TRUE, 
+                    boot_ages = TRUE, 
+                    al_var = TRUE, 
+                    al_var_ann = TRUE, 
+                    age_err = TRUE,
+                    region = 'goa',  
+                    save = 'base')
 
-# w/c/e goa ----
-surveyISS::srvy_iss_w_c_e(iters = iters, 
-                          lfreq_data = data$lfreq,
-                          specimen_data = data$specimen, 
-                          cpue_data = data$cpue, 
-                          strata_data = data$strata,  
-                          yrs = 1990,
-                          boot_hauls = TRUE, 
-                          boot_lengths = TRUE, 
-                          boot_ages = TRUE, 
-                          al_var = TRUE, 
-                          al_var_ann = TRUE, 
-                          age_err = TRUE,
-                          region = 'goa',  
-                          save = 'space')
-
-# w-c/e goa ----
-surveyISS::srvy_iss_wc_e(iters = iters, 
-                         lfreq_data = data$lfreq,
+## caal ----
+surveyISS::srvy_iss_caal(iters = iters, 
                          specimen_data = data$specimen, 
                          cpue_data = data$cpue, 
-                         strata_data = data$strata,  
                          yrs = 1990,
+                         bin = 1,
                          boot_hauls = TRUE, 
-                         boot_lengths = TRUE, 
-                         boot_ages = TRUE, 
+                         boot_ages = TRUE,
                          al_var = TRUE, 
                          al_var_ann = TRUE, 
                          age_err = TRUE,
                          region = 'goa',  
-                         save = 'space')
+                         save = 'base')
+
+# w/c/e goa ----
+surveyISS::srvy_iss_goa_w_c_e(iters = iters, 
+                              lfreq_data = data$lfreq,
+                              specimen_data = data$specimen, 
+                              cpue_data = data$cpue, 
+                              strata_data = data$strata,  
+                              yrs = 1990,
+                              boot_hauls = TRUE, 
+                              boot_lengths = TRUE, 
+                              boot_ages = TRUE, 
+                              al_var = TRUE, 
+                              al_var_ann = TRUE, 
+                              age_err = TRUE,
+                              region = 'goa',  
+                              save = 'space')
+
+# w-c/e goa ----
+surveyISS::srvy_iss_goa_wc_e(iters = iters, 
+                             lfreq_data = data$lfreq,
+                             specimen_data = data$specimen, 
+                             cpue_data = data$cpue, 
+                             strata_data = data$strata,  
+                             yrs = 1990,
+                             boot_hauls = TRUE, 
+                             boot_lengths = TRUE, 
+                             boot_ages = TRUE, 
+                             al_var = TRUE, 
+                             al_var_ann = TRUE, 
+                             age_err = TRUE,
+                             region = 'goa',  
+                             save = 'space')
 
 
 

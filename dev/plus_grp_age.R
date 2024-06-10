@@ -14,7 +14,7 @@ iters = 10
 # get data ----
 # if query = TRUE then will run data queries, if FALSE will read previously run data
 # set = TRUE if first time running, or if data has changed
-query = TRUE
+query = FALSE
 
 region = 'goa'
 yrs = 1990
@@ -101,38 +101,6 @@ surveyISS::srvy_iss_caal(iters = iters,
                          region = 'goa',  
                          save = '10plus')
 
-# 15+ ----
-## age & length ----
-surveyISS::srvy_iss(iters = iters, 
-                    lfreq_data = data$lfreq,
-                    specimen_data = data$specimen, 
-                    cpue_data = data$cpue, 
-                    strata_data = data$strata,  
-                    yrs = 1990,
-                    boot_hauls = TRUE, 
-                    boot_lengths = TRUE, 
-                    boot_ages = TRUE, 
-                    al_var = TRUE, 
-                    al_var_ann = TRUE, 
-                    age_err = TRUE,
-                    plus_age = 15,
-                    region = 'goa',  
-                    save = '15plus')
-
-## caal ----
-surveyISS::srvy_iss_caal(iters = iters, 
-                         specimen_data = data$specimen, 
-                         cpue_data = data$cpue, 
-                         yrs = 1990,
-                         boot_hauls = TRUE, 
-                         boot_ages = TRUE,
-                         al_var = TRUE, 
-                         al_var_ann = TRUE, 
-                         age_err = TRUE,
-                         plus_age = 15,
-                         region = 'goa',  
-                         save = '15plus')
-
 # 20+ ----
 ## age & length ----
 surveyISS::srvy_iss(iters = iters, 
@@ -164,38 +132,6 @@ surveyISS::srvy_iss_caal(iters = iters,
                          plus_age = 20,
                          region = 'goa',  
                          save = '20plus')
-
-# 25+ ----
-## age & length ----
-surveyISS::srvy_iss(iters = iters, 
-                    lfreq_data = data$lfreq,
-                    specimen_data = data$specimen, 
-                    cpue_data = data$cpue, 
-                    strata_data = data$strata,  
-                    yrs = 1990,
-                    boot_hauls = TRUE, 
-                    boot_lengths = TRUE, 
-                    boot_ages = TRUE, 
-                    al_var = TRUE, 
-                    al_var_ann = TRUE, 
-                    age_err = TRUE,
-                    plus_age = 25,
-                    region = 'goa',  
-                    save = '25plus')
-
-## caal ----
-surveyISS::srvy_iss_caal(iters = iters, 
-                         specimen_data = data$specimen, 
-                         cpue_data = data$cpue, 
-                         yrs = 1990,
-                         boot_hauls = TRUE, 
-                         boot_ages = TRUE,
-                         al_var = TRUE, 
-                         al_var_ann = TRUE, 
-                         age_err = TRUE,
-                         plus_age = 25,
-                         region = 'goa',  
-                         save = '25plus')
 
 # 30+ ----
 ## age & length ----

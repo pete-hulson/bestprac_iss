@@ -14,7 +14,7 @@ iters = 10
 # get data ----
 # if query = TRUE then will run data queries, if FALSE will read previously run data
 # set = TRUE if first time running, or if data has changed
-query = TRUE
+query = FALSE
 
 region = 'goa'
 yrs = 1990
@@ -37,38 +37,6 @@ if(iters < 100){
   st <- Sys.time()
 }
 
-# 1 cm bins ----
-## age & length ----
-surveyISS::srvy_iss(iters = iters, 
-                    lfreq_data = data$lfreq,
-                    specimen_data = data$specimen, 
-                    cpue_data = data$cpue, 
-                    strata_data = data$strata,  
-                    yrs = 1990,
-                    bin = 1,
-                    boot_hauls = TRUE, 
-                    boot_lengths = TRUE, 
-                    boot_ages = TRUE, 
-                    al_var = TRUE, 
-                    al_var_ann = TRUE, 
-                    age_err = TRUE,
-                    region = 'goa',  
-                    save = '1cm')
-
-## caal ----
-surveyISS::srvy_iss_caal(iters = iters, 
-                         specimen_data = data$specimen, 
-                         cpue_data = data$cpue, 
-                         yrs = 1990,
-                         bin = 1,
-                         boot_hauls = TRUE, 
-                         boot_ages = TRUE,
-                         al_var = TRUE, 
-                         al_var_ann = TRUE, 
-                         age_err = TRUE,
-                         region = 'goa',  
-                         save = '1cm')
-
 # 2 cm bins ----
 ## age & length ----
 surveyISS::srvy_iss(iters = iters, 
@@ -77,14 +45,14 @@ surveyISS::srvy_iss(iters = iters,
                     cpue_data = data$cpue, 
                     strata_data = data$strata,  
                     yrs = 1990,
-                    bin = 1,
+                    bin = 2,
                     boot_hauls = TRUE, 
                     boot_lengths = TRUE, 
                     boot_ages = TRUE, 
                     al_var = TRUE, 
                     al_var_ann = TRUE, 
                     age_err = TRUE,
-                    region = 'goa',  
+                    region = 'goa',
                     save = '2cm')
 
 ## caal ----
@@ -92,46 +60,14 @@ surveyISS::srvy_iss_caal(iters = iters,
                          specimen_data = data$specimen, 
                          cpue_data = data$cpue, 
                          yrs = 1990,
-                         bin = 1,
+                         bin = 2,
                          boot_hauls = TRUE, 
                          boot_ages = TRUE,
                          al_var = TRUE, 
                          al_var_ann = TRUE, 
                          age_err = TRUE,
-                         region = 'goa',  
+                         region = 'goa',
                          save = '2cm')
-
-# 3 cm bins ----
-## age & length ----
-surveyISS::srvy_iss(iters = iters, 
-                    lfreq_data = data$lfreq,
-                    specimen_data = data$specimen, 
-                    cpue_data = data$cpue, 
-                    strata_data = data$strata,  
-                    yrs = 1990,
-                    bin = 1,
-                    boot_hauls = TRUE, 
-                    boot_lengths = TRUE, 
-                    boot_ages = TRUE, 
-                    al_var = TRUE, 
-                    al_var_ann = TRUE, 
-                    age_err = TRUE,
-                    region = 'goa',  
-                    save = '3cm')
-
-## caal ----
-surveyISS::srvy_iss_caal(iters = iters, 
-                         specimen_data = data$specimen, 
-                         cpue_data = data$cpue, 
-                         yrs = 1990,
-                         bin = 1,
-                         boot_hauls = TRUE, 
-                         boot_ages = TRUE,
-                         al_var = TRUE, 
-                         al_var_ann = TRUE, 
-                         age_err = TRUE,
-                         region = 'goa',  
-                         save = '3cm')
 
 # 5 cm bins ----
 ## age & length ----
@@ -141,7 +77,7 @@ surveyISS::srvy_iss(iters = iters,
                     cpue_data = data$cpue, 
                     strata_data = data$strata,  
                     yrs = 1990,
-                    bin = 1,
+                    bin = 5,
                     boot_hauls = TRUE, 
                     boot_lengths = TRUE, 
                     boot_ages = TRUE, 
@@ -156,7 +92,7 @@ surveyISS::srvy_iss_caal(iters = iters,
                          specimen_data = data$specimen, 
                          cpue_data = data$cpue, 
                          yrs = 1990,
-                         bin = 1,
+                         bin = 5,
                          boot_hauls = TRUE, 
                          boot_ages = TRUE,
                          al_var = TRUE, 
@@ -173,7 +109,7 @@ surveyISS::srvy_iss(iters = iters,
                     cpue_data = data$cpue, 
                     strata_data = data$strata,  
                     yrs = 1990,
-                    bin = 1,
+                    bin = 10,
                     boot_hauls = TRUE, 
                     boot_lengths = TRUE, 
                     boot_ages = TRUE, 
@@ -188,7 +124,7 @@ surveyISS::srvy_iss_caal(iters = iters,
                          specimen_data = data$specimen, 
                          cpue_data = data$cpue, 
                          yrs = 1990,
-                         bin = 1,
+                         bin = 10,
                          boot_hauls = TRUE, 
                          boot_ages = TRUE,
                          al_var = TRUE, 
